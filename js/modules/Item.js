@@ -18,32 +18,22 @@ export default class Item {
         let deleButton = $("<button> - </button>").on("click", () => {
             this.orderlist.removeItem(this);
         });
+        let buttonsContainer=$("<div class='button-container'></div>")
+        buttonsContainer.append(deleButton,addButton)
         let container = $("<div class='item'></div>").attr("id", this.name)
-            .append(name, price,image, addButton, deleButton);
+            .append(name, price,image, buttonsContainer);
         let self = this;
 
         container.draggable({
             //appendTo:"#orderList",
             helper: "clone",
             drag: function (e, ui) {
-                console.log(ui.helper.prevObject[0].id)
                 ui.helper.item = self
             }
         })
         this.domObject = container;
         container.item = this;
         let parent = $("#menu").append(container);
-    }
-
-    addToList() {
-        // let parent=$("#selction-container");
-        console.log(`${this.name} added`);
-        console.log(this)
-
-    }
-
-    deleteFromList() {
-        console.log(`${this.name} eleted`);
     }
 
     toString() {

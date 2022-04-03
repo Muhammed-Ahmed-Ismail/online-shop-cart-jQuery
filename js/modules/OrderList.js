@@ -72,15 +72,29 @@ export  default class OrderList
     calculateTotal()
     {
         let total=0;
+        let delivery=15;
         this.itemsList.forEach((item)=>total+=item.quantity*parseFloat(item.price))
 
         let totalele=$('.totlal').append('<p></p>')
         if (total>300)
         {
-            totalele.text(`the total bill is: ${total} after discound it is ${total*.85} L.E`)
+            totalele.text(`the total bill is: ${total} after discound it is ${total*.85} L.E 
+            
+                                 Delivery=${delivery} 
+                                 
+                                 tax 14%= ${.14*total}
+                                 
+                                   total=${delivery+1.14*total}`)
         }else
         {
-            totalele.text(`the total bill is: ${total} L.E`)
+            totalele.text(`the total bill is: ${total} L.E
+            
+                                 Delivery=${delivery}
+                                 
+                                  tax 14%= ${.14*total}
+                                  
+                                   total=${delivery+1.14*total}`)
+
         }
     }
 

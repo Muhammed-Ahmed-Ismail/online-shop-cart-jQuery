@@ -35,4 +35,3 @@ menueItems.forEach((item)=> {
     newItme.createDomElement();
     itemsInMenue.push(newItme);
 })
-console.log(itemsInMenue)

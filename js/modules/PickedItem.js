@@ -11,7 +11,6 @@ export default class PickedItem extends Item
 
         let name =$("<p class='product-name'></p>").text(this.name);
         let image=$("<img>").attr("src",this.image);
-        console.log(image)
         let price=$("<p class='price'></p>").text(this.price);
         let quantity=$("<p class='quantity'></p>").text(this.quantity)
         this.quantityDomObject=quantity
@@ -29,7 +28,6 @@ export default class PickedItem extends Item
             helper:"clone",
             drag: function (ev,ui){
                 ui.helper.item=self
-                console.log(ui.helper.item)
             },
             stop:function (){
                 self.orderlist.removeItem(self)

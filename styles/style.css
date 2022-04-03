@@ -9,7 +9,10 @@ root {
     box-sizing: border-box;
     height: 100vh;
 }
-
+body
+{
+    background-color: #ffc300;
+}
 .flex {
     display: flex;
     gap: 50px;
@@ -26,7 +29,7 @@ root {
 
 h2.menu-title {
     font-family: Caviate;
-    color: #9D0208;
+    color: #000814;
     text-align: center;
     font-size: 40px;
 }
@@ -38,10 +41,18 @@ h2.menu-title {
     flex-direction: column;
     justify-items: center;
     align-items: center;
-    border: 3px solid #9D0208;
+    border: 3px solid #000814;
     border-radius: 10px;
     padding: 20px;
 
+}
+#menu
+{
+    margin-left: 80px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5rem;
+    justify-content: center;
 }
 
 #menu-container {
@@ -70,7 +81,7 @@ h2.menu-title {
 }
 
 .item, .picked-item , .totlal{
-    background-color: #F48C06;
+    background-color: #ffc300;
     display: flex;
     flex-direction: row;
     margin-top: 20px;
@@ -80,31 +91,34 @@ h2.menu-title {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    width: 80%;
+    /*width: 80%;*/
     max-width: 500px;
     position: relative;
     font-family: Caviate, serif;
-    color: #9D0208;
+    color: #000814;
+    width: 300px;
+    height: 300px;
+    border: #000814 1px solid;
 }
 
-.item > img, .picked-item > img {
-    width: 100px;
-    height: 100px;
+.item  img, .picked-item > img {
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    border: solid 2px white;
-    margin-left: 30%;
+    border: solid 2px #000814;
+    margin-left: 10%;
 }
 
-.item > button, .picked-item > button {
+.item  button, .picked-item > button {
     height: 40px;
     width: 60px;
     font-size: 30px;
     font-family: Caviate, Serif;
     line-height: 2px;
-    background-color: #9D0208;
-    border: solid 1px #9D0208;
+    background-color: #FFBA08;
+    border: solid 1px #000814;
     border-radius: 5px;
-    color: #FFBA08;
+    color: #000814;
 }
 
 
@@ -132,4 +146,10 @@ h2.menu-title {
 .totlal
 {
     font-size: 25px;
+}
+.button-container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
