@@ -1,0 +1,25 @@
+
+.flex
+{
+    display: flex;
+    gap: 50px;
+
+}
+
+#menu
+{
+    width: 500px;
+
+    border: solid 1px black;
+    background-color: darkgray;
+}
+#orderList
+{
+    width: 500px;
+    height: 500px;
+    background-color: darkgray;
+}
+.item
+{
+    background-color: blue;
+}
