@@ -1,24 +1,27 @@
 export default class Item {
-    constructor(name, price, image, list) {
-        this.name = name;
-        this.price = price;
-        this.itemimage = image;
+    constructor(item, list) {
+        this.name = item.name;
+        this.price = item.price;
+        this.image = item.image;
         this.orderlist = list;
+
     }
 
     createDomElement() {
-        let addButton = $("<button> add </button>").on("click", () => {
+
+        let name = $("<p class='product-name'></p>").text(this.name);
+        let image = $("<img>").attr("src", this.image);
+        let price = $("<p class='price'></p>").text(this.price);
+        let addButton = $("<button> + </button>").on("click", () => {
             this.orderlist.addItem(this);
         });
-        let deleButton = $("<button> dele </button>").on("click", () => {
+        let deleButton = $("<button> - </button>").on("click", () => {
             this.orderlist.removeItem(this);
         });
-        let name = $("<p></p>").text(this.name);
-        let image = $("<img>").attr("src", this.itemimage);
-        let price = $("<p></p>").text(this.price);
         let container = $("<div class='item'></div>").attr("id", this.name)
-            .append(name, price, addButton, deleButton);
+            .append(name, price,image, addButton, deleButton);
         let self = this;
+
         container.draggable({
             //appendTo:"#orderList",
             helper: "clone",

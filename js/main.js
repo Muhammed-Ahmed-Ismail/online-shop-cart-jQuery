@@ -6,11 +6,33 @@ import OrderList from "./modules/OrderList.js";
 
 const menu=new Menu().createDomElement();;
 const orderList = new OrderList();
-console.log(orderList)
-orderList.createDomElement();
-let item1=new Item("pizza","40","img.png",orderList)
-item1.createDomElement()
-let item2=new Item("water","40","img.png",orderList)
-item2.createDomElement()
-let item3=new Item("juice","40","img.png",orderList)
-item3.createDomElement()
+
+let menueItems=[
+    {
+        name:"Margritta",
+        price:"60 LE",
+        image: "../images/margrita.jpeg"
+    },
+    {
+        name:"Mashroom",
+        price:"65 LE",
+        image: "../images/mashroom.jpeg"
+    },
+    {
+        name:"Naboly",
+        price:"60 LE",
+        image: "../images/napoly.jpg"
+    },
+    {
+        name:"Peprony",
+        price:"60 LE",
+        image: "../images/peprony.jpeg"
+    },
+]
+let itemsInMenue=[];
+menueItems.forEach((item)=> {
+    let newItme=new Item(item,orderList)
+    newItme.createDomElement();
+    itemsInMenue.push(newItme);
+})
+console.log(itemsInMenue)

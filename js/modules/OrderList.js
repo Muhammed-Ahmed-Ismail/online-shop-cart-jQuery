@@ -3,6 +3,7 @@ export  default class OrderList
 {
     constructor() {
         this.itemsList=[];
+        this.createDomElement()
     }
     createDomElement()
     {
@@ -31,6 +32,7 @@ export  default class OrderList
             retItem.quantity++
             retItem.updateQuantity();
         }
+        this.calculateTotal();
     }
     removeItem(item)
     {
@@ -52,18 +54,12 @@ export  default class OrderList
                 }
             }
         }
+        this.calculateTotal()
     }
     findItem(item)
     {
 
         let retItem=null;
-   /*     let retIndex= this.itemsList.findIndex(extistItem=>{extistItem.name === item.name
-        console.log(  item.name)
-            console.log( extistItem.name)
-        });
-        console.log(retIndex)
-        console.log(item)
-        console.log(this.itemsList)*/
         for(let i=0;i<this.itemsList.length;i++)
         {
             if(this.itemsList[i].name===item.name) {
@@ -73,4 +69,19 @@ export  default class OrderList
         }
         return retItem;
     }
+    calculateTotal()
+    {
+        let total=0;
+        this.itemsList.forEach((item)=>total+=item.quantity*parseFloat(item.price))
+
+        let totalele=$('.totlal').append('<p></p>')
+        if (total>300)
+        {
+            totalele.text(`the total bill is: ${total} after discound it is ${total*.85} L.E`)
+        }else
+        {
+            totalele.text(`the total bill is: ${total} L.E`)
+        }
+    }
+
 }
