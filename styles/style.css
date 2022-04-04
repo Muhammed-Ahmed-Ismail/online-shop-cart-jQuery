@@ -139,17 +139,26 @@ h2.menu-title {
 }
 .quantity
 {
-    font-size: 25px;
+    font-size: 36px;
     margin-right: 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
 
 }
 .totlal
 {
     font-size: 25px;
+    width: 500px;
 }
 .button-container
 {
     display: flex;
     flex-direction: column;
     gap: 4px;
+}
+.hidden
+{
+    display: none;
 }

@@ -21,8 +21,10 @@ export default class PickedItem extends Item
         let deleButton=$("<button> - </button>").on("click",()=>{
             this.orderlist.removeItem(this);
         });
+        let buttonsContainer = $("<div class='button-container'></div>")
+        buttonsContainer.append(addButton, deleButton)
         let container=$("<div class='picked-item item'></div>").attr("id",this.name)
-            .append(name,price,image,addButton,deleButton,quantity);
+            .append(name,price,image,buttonsContainer,quantity);
         let self=this;
         container.draggable({
             helper:"clone",

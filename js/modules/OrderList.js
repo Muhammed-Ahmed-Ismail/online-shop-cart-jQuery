@@ -74,27 +74,20 @@ export  default class OrderList
         let total=0;
         let delivery=15;
         this.itemsList.forEach((item)=>total+=item.quantity*parseFloat(item.price))
-
-        let totalele=$('.totlal').append('<p></p>')
-        if (total>300)
+        let vat=total*.14.toFixed(2)
+        let sum=total+vat+delivery
+        $("#total-value").text(total+" L E")
+        $("#delevery-value").text(delivery +" L E")
+        $("#vat-value").text(vat + "L E")
+        $("#total-bill-value").text(sum+" L E")
+        if(total>300)
         {
-            totalele.text(`the total bill is: ${total} after discound it is ${total*.85} L.E 
-            
-                                 Delivery=${delivery} 
-                                 
-                                 tax 14%= ${.14*total}
-                                 
-                                   total=${delivery+1.14*total}`)
-        }else
-        {
-            totalele.text(`the total bill is: ${total} L.E
-            
-                                 Delivery=${delivery}
-                                 
-                                  tax 14%= ${.14*total}
-                                  
-                                   total=${delivery+1.14*total}`)
+            let discount=total*0.85.toFixed(2)
+            $("#discount-value").text(discount)
 
+        }
+        else {
+            $("#discount-value").text("No discount applied yet push uo !!")
         }
     }
 

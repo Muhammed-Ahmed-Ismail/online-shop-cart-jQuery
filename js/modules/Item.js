@@ -18,10 +18,10 @@ export default class Item {
         let deleButton = $("<button> - </button>").on("click", () => {
             this.orderlist.removeItem(this);
         });
-        let buttonsContainer=$("<div class='button-container'></div>")
-        buttonsContainer.append(deleButton,addButton)
+        let buttonsContainer = $("<div class='button-container'></div>")
+        buttonsContainer.append(addButton, deleButton)
         let container = $("<div class='item'></div>").attr("id", this.name)
-            .append(name, price,image, buttonsContainer);
+            .append(name, price, image, buttonsContainer);
         let self = this;
 
         container.draggable({

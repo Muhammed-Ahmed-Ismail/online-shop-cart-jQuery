@@ -13,19 +13,40 @@
 <body>
 <main>
     <div class="menus">
-    <section id="menu-container">
-        <h2 class="menu-title">menu <i class="bi bi-menu-button-wide"></i></h2>
+        <section id="menu-container">
+            <h2 class="menu-title">menu <i class="bi bi-menu-button-wide"></i></h2>
 
-    </section>
-    <section id="selction-container">
+        </section>
+        <section id="selction-container">
 
-        <h2 class="menu-title"> cart <i class="bi bi-cart2"></i></h2>
+            <h2 class="menu-title"> cart <i class="bi bi-cart2"></i></h2>
 
-    </section>
+        </section>
 
     </div>
-    <div class="totlal">
-        the total bill is 0
+    <div id="bill-card" class="totlal">
+        <table>
+            <tr>
+                <td class="bill" id="total">Total:</td>
+                <td class="value" id="total-value"></td>
+            </tr>
+            <tr>
+                <td class="bill" id="vat">VAT:</td>
+                <td class="value" id="vat-value"></td>
+            </tr>
+            <tr>
+                <td class="bill" id="delevery">Delevery:</td>
+                <td class="value" id="delevery-value"></td>
+            </tr>
+            <tr>
+                <td class="bill" id="total-bill">Total:</td>
+                <td class="value" id="total-bill-value"></td>
+            </tr>
+            <tr id="">
+                <td class="bill " id="discount ">Bill after discount:</td>
+                <td class="value " id="discount-value"></td>
+            </tr>
+        </table>
     </div>
 
 </main>
